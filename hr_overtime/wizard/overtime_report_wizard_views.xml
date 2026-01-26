@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Overtime Report Wizard Form View -->
+    <record id="overtime_report_wizard_view_form" model="ir.ui.view">
+        <field name="name">overtime.report.wizard.form</field>
+        <field name="model">overtime.report.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Overtime Report">
+                <group>
+                    <group string="Date Range">
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                    </group>
+                    <group string="Filters">
+                        <field name="state_filter"/>
+                    </group>
+                </group>
+                <group>
+                    <group>
+                        <field name="employee_ids" widget="many2many_tags" 
+                               options="{'no_create': True}"/>
+                        <field name="department_ids" widget="many2many_tags"
+                               options="{'no_create': True}"/>
+                    </group>
+                    <group>
+                        <field name="overtime_type_ids" widget="many2many_tags"
+                               options="{'no_create': True}"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_generate_report" string="Generate Report" 
+                            type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Overtime Report Wizard Action -->
+    <record id="overtime_report_wizard_action" model="ir.actions.act_window">
+        <field name="name">Overtime Report</field>
+        <field name="res_model">overtime.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>
