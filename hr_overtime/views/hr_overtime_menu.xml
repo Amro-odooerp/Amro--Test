@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Main Overtime Menu -->
+    <menuitem id="menu_hr_overtime_root"
+              name="Overtime"
+              web_icon="hr_overtime,static/description/icon.png"
+              sequence="25"/>
+
+    <!-- Overtime Submenu -->
+    <menuitem id="menu_hr_overtime_overtime"
+              name="Overtime"
+              parent="menu_hr_overtime_root"
+              sequence="10"/>
+
+    <menuitem id="menu_hr_overtime_my_overtime"
+              name="My Overtime"
+              parent="menu_hr_overtime_overtime"
+              action="hr_overtime_action"
+              sequence="10"/>
+
+    <menuitem id="menu_hr_overtime_to_approve"
+              name="To Approve"
+              parent="menu_hr_overtime_overtime"
+              action="hr_overtime_action_to_approve"
+              groups="hr_overtime.group_hr_overtime_user"
+              sequence="20"/>
+
+    <menuitem id="menu_hr_overtime_all"
+              name="All Overtime"
+              parent="menu_hr_overtime_overtime"
+              action="hr_overtime_action_all"
+              groups="hr_overtime.group_hr_overtime_manager"
+              sequence="30"/>
+
+    <!-- Reporting Submenu -->
+    <menuitem id="menu_hr_overtime_reporting"
+              name="Reporting"
+              parent="menu_hr_overtime_root"
+              groups="hr_overtime.group_hr_overtime_manager"
+              sequence="20"/>
+
+    <menuitem id="menu_hr_overtime_report_pivot"
+              name="Overtime Analysis"
+              parent="menu_hr_overtime_reporting"
+              action="hr_overtime_action_all"
+              sequence="10"/>
+
+    <!-- Configuration Submenu -->
+    <menuitem id="menu_hr_overtime_configuration"
+              name="Configuration"
+              parent="menu_hr_overtime_root"
+              groups="hr_overtime.group_hr_overtime_manager"
+              sequence="30"/>
+
+    <menuitem id="menu_hr_overtime_type"
+              name="Overtime Types"
+              parent="menu_hr_overtime_configuration"
+              action="hr_overtime_type_action"
+              sequence="10"/>
+
+</odoo>
