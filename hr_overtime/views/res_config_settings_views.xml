@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Extend Settings View -->
+    <record id="res_config_settings_view_form_overtime" model="ir.ui.view">
+        <field name="name">res.config.settings.form.overtime</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="hr.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//app[@name='hr']" position="inside">
+                <block title="Overtime Settings" name="overtime_settings">
+                    <setting string="Monthly Working Hours" 
+                             help="Standard monthly working hours used to calculate hourly rate from monthly wage">
+                        <div class="content-group">
+                            <div class="mt16">
+                                <field name="overtime_monthly_hours" class="o_light_label"/>
+                                <span class="text-muted"> hours/month</span>
+                            </div>
+                        </div>
+                    </setting>
+                    <setting string="Maximum Overtime Hours" 
+                             help="Maximum allowed overtime hours per single request">
+                        <div class="content-group">
+                            <div class="mt16">
+                                <field name="overtime_max_hours" class="o_light_label"/>
+                                <span class="text-muted"> hours</span>
+                            </div>
+                        </div>
+                    </setting>
+                    <setting string="Overtime Approval Required" 
+                             help="If enabled, overtime requests require manager approval">
+                        <div class="content-group">
+                            <div class="mt16">
+                                <field name="overtime_approval_required"/>
+                            </div>
+                        </div>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>

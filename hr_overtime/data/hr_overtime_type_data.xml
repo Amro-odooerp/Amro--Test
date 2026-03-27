@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Default Overtime Types -->
+        <record id="overtime_type_regular" model="hr.overtime.type">
+            <field name="name">Regular Overtime</field>
+            <field name="code">REGULAR</field>
+            <field name="rate">1.5</field>
+            <field name="sequence">10</field>
+            <field name="description">Standard overtime work on regular working days, compensated at 1.5x the regular hourly rate.</field>
+            <field name="color">1</field>
+        </record>
+
+        <record id="overtime_type_weekend" model="hr.overtime.type">
+            <field name="name">Weekend Overtime</field>
+            <field name="code">WEEKEND</field>
+            <field name="rate">2.0</field>
+            <field name="sequence">20</field>
+            <field name="description">Overtime work on weekends (Saturday/Sunday), compensated at 2x the regular hourly rate.</field>
+            <field name="color">2</field>
+        </record>
+
+        <record id="overtime_type_holiday" model="hr.overtime.type">
+            <field name="name">Holiday Overtime</field>
+            <field name="code">HOLIDAY</field>
+            <field name="rate">2.5</field>
+            <field name="sequence">30</field>
+            <field name="description">Overtime work on public holidays, compensated at 2.5x the regular hourly rate.</field>
+            <field name="color">3</field>
+        </record>
+
+        <record id="overtime_type_night" model="hr.overtime.type">
+            <field name="name">Night Shift Overtime</field>
+            <field name="code">NIGHT</field>
+            <field name="rate">1.75</field>
+            <field name="sequence">40</field>
+            <field name="description">Overtime work during night hours (typically 10 PM - 6 AM), compensated at 1.75x the regular hourly rate.</field>
+            <field name="color">4</field>
+        </record>
+
+        <record id="overtime_type_emergency" model="hr.overtime.type">
+            <field name="name">Emergency Overtime</field>
+            <field name="code">EMERGENCY</field>
+            <field name="rate">2.0</field>
+            <field name="sequence">50</field>
+            <field name="description">Urgent overtime work required for emergency situations, compensated at 2x the regular hourly rate.</field>
+            <field name="color">5</field>
+        </record>
+    </data>
+</odoo>

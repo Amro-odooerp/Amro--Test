@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #875A7B;
+        }
+        .feature-box {
+            background: #f8f9fa;
+            border-left: 4px solid #875A7B;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .screenshot {
+            max-width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        ul li:before {
+            content: "✓ ";
+            color: #28a745;
+            font-weight: bold;
+        }
+        .highlight {
+            background: #fff3cd;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>HR Overtime Management</h1>
+    <p>A comprehensive solution for managing employee overtime hours and payments in Odoo.</p>
+
+    <h2>Key Features</h2>
+    
+    <div class="feature-box">
+        <h3>Multiple Overtime Types</h3>
+        <ul>
+            <li>Regular Overtime (1.5x rate)</li>
+            <li>Weekend Overtime (2.0x rate)</li>
+            <li>Holiday Overtime (2.5x rate)</li>
+            <li>Night Shift Overtime (1.75x rate)</li>
+            <li>Emergency Overtime (2.0x rate)</li>
+            <li>Create custom overtime types with configurable rates</li>
+        </ul>
+    </div>
+
+    <div class="feature-box">
+        <h3>Approval Workflow</h3>
+        <ul>
+            <li>Draft → Submitted → Approved/Rejected workflow</li>
+            <li>Manager notifications for pending approvals</li>
+            <li>Activity scheduling for better tracking</li>
+            <li>Rejection reason tracking</li>
+        </ul>
+    </div>
+
+    <div class="feature-box">
+        <h3>Automatic Calculations</h3>
+        <ul>
+            <li>Automatic duration calculation from start/end times</li>
+            <li>Hourly rate computed from employee contract</li>
+            <li>Overtime amount based on type multiplier</li>
+            <li>Configurable monthly working hours</li>
+        </ul>
+    </div>
+
+    <div class="feature-box">
+        <h3>Reporting & Analytics</h3>
+        <ul>
+            <li>Pivot and Graph views for analysis</li>
+            <li>Calendar view for visual tracking</li>
+            <li>Report wizard with filtering options</li>
+            <li>Export capabilities</li>
+        </ul>
+    </div>
+
+    <div class="feature-box">
+        <h3>Security & Access</h3>
+        <ul>
+            <li>User and Manager permission groups</li>
+            <li>Employees see only their own records</li>
+            <li>Managers see their team's records</li>
+            <li>HR Managers have full access</li>
+            <li>Multi-company support</li>
+        </ul>
+    </div>
+
+    <h2>Configuration</h2>
+    <p>Navigate to <strong>Settings → HR → Overtime Settings</strong> to configure:</p>
+    <ul>
+        <li>Monthly working hours (default: 173.33 hours)</li>
+        <li>Maximum overtime hours per request (default: 12 hours)</li>
+        <li>Approval requirements</li>
+    </ul>
+
+    <h2>How to Use</h2>
+    <ol>
+        <li>Install the module from Apps menu</li>
+        <li>Configure overtime types in Configuration → Overtime Types</li>
+        <li>Employees create overtime requests from Overtime → My Overtime</li>
+        <li>Managers approve/reject from Overtime → To Approve</li>
+        <li>Generate reports from Overtime → Reports</li>
+    </ol>
+
+    <div class="highlight">
+        <strong>Note:</strong> This module requires the HR and HR Contracts modules to be installed.
+    </div>
+
+    <h2>Support</h2>
+    <p>For questions or support, please contact your system administrator.</p>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main Menu -->
+    <menuitem id="menu_hr_overtime_root"
+              name="Overtime"
+              web_icon="hr_overtime,static/description/icon.png"
+              sequence="25"/>
+
+    <!-- Overtime Menu -->
+    <menuitem id="menu_hr_overtime_main"
+              name="Overtime"
+              parent="menu_hr_overtime_root"
+              sequence="10"/>
+
+    <menuitem id="menu_hr_overtime_my"
+              name="My Overtime"
+              parent="menu_hr_overtime_main"
+              action="hr_overtime_action"
+              sequence="10"/>
+
+    <menuitem id="menu_hr_overtime_to_approve"
+              name="To Approve"
+              parent="menu_hr_overtime_main"
+              action="hr_overtime_action_to_approve"
+              groups="hr_overtime.group_hr_overtime_user"
+              sequence="20"/>
+
+    <menuitem id="menu_hr_overtime_all"
+              name="All Overtime"
+              parent="menu_hr_overtime_main"
+              action="hr_overtime_action_all"
+              groups="hr_overtime.group_hr_overtime_manager"
+              sequence="30"/>
+
+    <menuitem id="menu_hr_overtime_approved"
+              name="Approved"
+              parent="menu_hr_overtime_main"
+              action="hr_overtime_action_approved"
+              groups="hr_overtime.group_hr_overtime_user"
+              sequence="40"/>
+
+    <!-- Reports Menu -->
+    <menuitem id="menu_hr_overtime_reports"
+              name="Reports"
+              parent="menu_hr_overtime_root"
+              groups="hr_overtime.group_hr_overtime_user"
+              sequence="20"/>
+
+    <menuitem id="menu_hr_overtime_report_wizard"
+              name="Overtime Report"
+              parent="menu_hr_overtime_reports"
+              action="overtime_report_wizard_action"
+              sequence="10"/>
+
+    <!-- Configuration Menu -->
+    <menuitem id="menu_hr_overtime_config"
+              name="Configuration"
+              parent="menu_hr_overtime_root"
+              groups="hr_overtime.group_hr_overtime_manager"
+              sequence="30"/>
+
+    <menuitem id="menu_hr_overtime_type"
+              name="Overtime Types"
+              parent="menu_hr_overtime_config"
+              action="hr_overtime_type_action"
+              sequence="10"/>
+
+    <!-- Also add to HR App Menu -->
+    <menuitem id="menu_hr_overtime_hr_root"
+              name="Overtime"
+              parent="hr.menu_hr_root"
+              sequence="25"/>
+
+    <menuitem id="menu_hr_overtime_hr_my"
+              name="My Overtime"
+              parent="menu_hr_overtime_hr_root"
+              action="hr_overtime_action"
+              sequence="10"/>
+
+    <menuitem id="menu_hr_overtime_hr_to_approve"
+              name="To Approve"
+              parent="menu_hr_overtime_hr_root"
+              action="hr_overtime_action_to_approve"
+              groups="hr_overtime.group_hr_overtime_user"
+              sequence="20"/>
+</odoo>
