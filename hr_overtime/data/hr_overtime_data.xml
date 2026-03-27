@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Sequence for overtime records -->
+        <record id="seq_hr_overtime" model="ir.sequence">
+            <field name="name">Overtime Reference</field>
+            <field name="code">hr.overtime</field>
+            <field name="prefix">OT/%(year)s/</field>
+            <field name="padding">5</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <!-- Default Overtime Types -->
+        <record id="overtime_type_regular" model="hr.overtime.type">
+            <field name="name">Regular Overtime</field>
+            <field name="code">REG</field>
+            <field name="sequence">10</field>
+            <field name="rate">1.5</field>
+            <field name="color">2</field>
+            <field name="description">Standard overtime work (weekday, outside normal hours)</field>
+            <field name="max_hours_per_day">4</field>
+            <field name="max_hours_per_month">40</field>
+        </record>
+
+        <record id="overtime_type_weekend" model="hr.overtime.type">
+            <field name="name">Weekend Overtime</field>
+            <field name="code">WKD</field>
+            <field name="sequence">20</field>
+            <field name="rate">2.0</field>
+            <field name="color">4</field>
+            <field name="description">Overtime work on weekends (Saturday, Sunday)</field>
+            <field name="max_hours_per_day">8</field>
+            <field name="max_hours_per_month">32</field>
+        </record>
+
+        <record id="overtime_type_holiday" model="hr.overtime.type">
+            <field name="name">Holiday Overtime</field>
+            <field name="code">HOL</field>
+            <field name="sequence">30</field>
+            <field name="rate">2.5</field>
+            <field name="color">1</field>
+            <field name="description">Overtime work on public holidays</field>
+            <field name="max_hours_per_day">8</field>
+            <field name="max_hours_per_month">24</field>
+        </record>
+
+        <record id="overtime_type_night" model="hr.overtime.type">
+            <field name="name">Night Shift Overtime</field>
+            <field name="code">NGT</field>
+            <field name="sequence">40</field>
+            <field name="rate">1.75</field>
+            <field name="color">3</field>
+            <field name="description">Overtime work during night hours (typically 10 PM - 6 AM)</field>
+            <field name="max_hours_per_day">6</field>
+            <field name="max_hours_per_month">30</field>
+        </record>
+
+        <record id="overtime_type_emergency" model="hr.overtime.type">
+            <field name="name">Emergency Overtime</field>
+            <field name="code">EMG</field>
+            <field name="sequence">50</field>
+            <field name="rate">2.0</field>
+            <field name="color">9</field>
+            <field name="description">Emergency or urgent overtime work</field>
+            <field name="requires_approval" eval="True"/>
+            <field name="max_hours_per_day">12</field>
+            <field name="max_hours_per_month">48</field>
+        </record>
+
+    </data>
+</odoo>

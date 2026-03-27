@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Overtime Type Form View -->
+    <record id="hr_overtime_type_view_form" model="ir.ui.view">
+        <field name="name">hr.overtime.type.form</field>
+        <field name="model">hr.overtime.type</field>
+        <field name="arch" type="xml">
+            <form string="Overtime Type">
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger" 
+                            attrs="{'invisible': [('active', '=', True)]}"/>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name" placeholder="e.g., Weekend Overtime"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Basic Information">
+                            <field name="code"/>
+                            <field name="sequence"/>
+                            <field name="active"/>
+                            <field name="color" widget="color_picker"/>
+                        </group>
+                        <group string="Rate Configuration">
+                            <field name="rate"/>
+                            <label for="rate" string=""/>
+                            <div class="text-muted">
+                                Example: 1.5 = 150% of base rate, 2.0 = 200% of base rate
+                            </div>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Limits">
+                            <field name="max_hours_per_day"/>
+                            <field name="max_hours_per_month"/>
+                        </group>
+                        <group string="Settings">
+                            <field name="requires_approval"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+                    <group string="Description">
+                        <field name="description" nolabel="1" 
+                               placeholder="Describe when this overtime type should be used..."/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Overtime Type Tree View -->
+    <record id="hr_overtime_type_view_tree" model="ir.ui.view">
+        <field name="name">hr.overtime.type.tree</field>
+        <field name="model">hr.overtime.type</field>
+        <field name="arch" type="xml">
+            <tree string="Overtime Types">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="rate"/>
+                <field name="max_hours_per_day"/>
+                <field name="max_hours_per_month"/>
+                <field name="requires_approval"/>
+                <field name="active" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Overtime Type Search View -->
+    <record id="hr_overtime_type_view_search" model="ir.ui.view">
+        <field name="name">hr.overtime.type.search</field>
+        <field name="model">hr.overtime.type</field>
+        <field name="arch" type="xml">
+            <search string="Search Overtime Types">
+                <field name="name"/>
+                <field name="code"/>
+                <filter name="active" string="Active" domain="[('active', '=', True)]"/>
+                <filter name="archived" string="Archived" domain="[('active', '=', False)]"/>
+                <separator/>
+                <filter name="requires_approval" string="Requires Approval" 
+                        domain="[('requires_approval', '=', True)]"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Overtime Type Action -->
+    <record id="hr_overtime_type_action" model="ir.actions.act_window">
+        <field name="name">Overtime Types</field>
+        <field name="res_model">hr.overtime.type</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="hr_overtime_type_view_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first overtime type
+            </p>
+            <p>
+                Define different types of overtime with their corresponding rate multipliers.
+                Common examples: Regular Overtime (1.5x), Weekend (2x), Holiday (2.5x).
+            </p>
+        </field>
+    </record>
+
+</odoo>
